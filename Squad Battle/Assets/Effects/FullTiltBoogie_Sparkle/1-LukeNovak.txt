@@ -1,0 +1,1 @@
+This is a "sparkle" package, an effect triggered when characters are presented or picked.
