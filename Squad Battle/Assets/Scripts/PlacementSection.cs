@@ -11,7 +11,6 @@ public class PlacementSection : MonoBehaviour
 
     List<Card> cardsList = new List<Card>();
 
-    //string selectedCard1, selectedCard2, selectedCard3, selectedCard4, selectedCard5;
 
     private void Start()
     {
@@ -77,7 +76,6 @@ public class PlacementSection : MonoBehaviour
             {
                 cardsList.Add(cards[i]);
             }
-
         }
     }
 }

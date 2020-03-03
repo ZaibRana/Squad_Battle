@@ -1433,7 +1433,6 @@ GameObject:
   - component: {fileID: 1419658395}
   - component: {fileID: 1419658394}
   - component: {fileID: 1419658393}
-  - component: {fileID: 1419658396}
   - component: {fileID: 1419658392}
   m_Layer: 5
   m_Name: Canvas
@@ -1515,30 +1514,13 @@ RectTransform:
   m_Children:
   - {fileID: 561008716}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1419658396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1419658391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aec0fcbafa8094c71a98ff95c3090af8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LevelTimerType: 1
-  LevelTime: 10
-  TimerTxt: {fileID: 1501975880}
-  DriftDistanceImg: {fileID: 0}
-  TimeUp: 0
 --- !u!1 &1442670806
 GameObject:
   m_ObjectHideFlags: 0
@@ -1818,6 +1800,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1501975878}
   m_CullTransparentMesh: 0
+--- !u!1 &1598104462
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1598104464}
+  - component: {fileID: 1598104463}
+  m_Layer: 0
+  m_Name: Timer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1598104463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598104462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aec0fcbafa8094c71a98ff95c3090af8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelTimerType: 1
+  LevelTime: 10
+  TimerTxt: {fileID: 1501975880}
+  DriftDistanceImg: {fileID: 0}
+  TimeUp: 0
+--- !u!4 &1598104464
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598104462}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.0835084, y: 0.032070108, z: -0.000000015979536}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1919410799
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1955,6 +1985,7 @@ MonoBehaviour:
   button: {fileID: 8300000, guid: 81652031b64c342cc8dbc59c138d77c5, type: 3}
   cardSelect: {fileID: 8300000, guid: 6f37f83647e1a1c4e8cae49521915ee9, type: 3}
   cardPlacement: {fileID: 0}
+  cardRemove: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
   death: {fileID: 0}
   win: {fileID: 0}
   aSource: {fileID: 0}

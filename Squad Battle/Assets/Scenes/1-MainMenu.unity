@@ -1200,11 +1200,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 8300000, guid: 81652031b64c342cc8dbc59c138d77c5, type: 3}
+  cardSelect: {fileID: 0}
+  cardPlacement: {fileID: 0}
+  cardRemove: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
   death: {fileID: 0}
   win: {fileID: 0}
-  blast: {fileID: 0}
-  HolePropSuck: {fileID: 0}
-  HoleEnemySuck: {fileID: 0}
   aSource: {fileID: 0}
 --- !u!4 &1960604335
 Transform:

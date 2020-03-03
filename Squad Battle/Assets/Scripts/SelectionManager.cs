@@ -19,7 +19,10 @@ public class SelectionManager : MonoBehaviour
     public Image Icon1, Icon2, Icon3, Icon4;
     public Sprite AnimalIcon, RobotIcon, PlantIcon, DinoIcon;
     List<string> listIcons = new List<string>();
+    List<string> listGroupNames = new List<string>();
     private string groupname;
+    private bool card1_OneClick = false, card2_OneClick = false, card3_OneClick = false,
+        card4_OneClick = false, card5_OneClick = false;
 
 
     //Arrange, Shuffle and Assign Cards
@@ -36,83 +39,238 @@ public class SelectionManager : MonoBehaviour
         {
             if (val == 1)
             {
-                //For icon to appear
-                groupname = cards[cardno1].group;
-                if (!listIcons.Contains(groupname))
+                //For Select
+                if (card1_OneClick == false)
                 {
-                    listIcons.Add(groupname);
-                    ShowIcon();
+                    //For Icon
+                    groupname = cards[cardno1].group;
+                    listGroupNames.Add(groupname);
+                    if (!listIcons.Contains(groupname))
+                    {
+                        listIcons.Add(groupname);
+                        ShowIcon();
+                    }
+
+                    //For Card
+                    card1.transform.GetChild(0).gameObject.SetActive(true);
+                    card1.color = new Color32(255, 255, 255, 100);
+                    cardsSelected++;
+                    SelectCard(cardno1);
+                    card1_OneClick = true;
+                    return;
                 }
 
-                //For card to select
-                card1.transform.GetChild(0).gameObject.SetActive(true);
-                card1.GetComponent<Button>().interactable = false;
-                cardsSelected++;
-                SelectCard(cardno1);
+                //For Deselect
+                if (card1_OneClick == true)
+                {
+                    //For Icon
+                    groupname = cards[cardno1].group;
+                    if (listGroupNames.Contains(groupname))
+                    {
+                        listGroupNames.Remove(groupname);
+                        if (!listGroupNames.Contains(groupname))
+                        {
+                            listIcons.Remove(groupname);
+                            RemoveIcon();
+                        }
+                    }
+
+                    //For Card
+                    card1.transform.GetChild(0).gameObject.SetActive(false);
+                    card1.color = new Color32(255, 255, 255, 255);
+                    cardsSelected--;
+                    DeSelectCard(cardno1);
+                    card1_OneClick = false;
+                    return;
+                }
             }
             if (val == 2)
             {
-                //For icon to appear
-                groupname = cards[cardno2].group;
-                if (!listIcons.Contains(groupname))
+                //For Select
+                if (card2_OneClick == false)
                 {
-                    listIcons.Add(groupname);
-                    ShowIcon();
+                    //For Icon
+                    groupname = cards[cardno2].group;
+                    listGroupNames.Add(groupname);
+                    if (!listIcons.Contains(groupname))
+                    {
+                        listIcons.Add(groupname);
+                        ShowIcon();
+                    }
+
+                    //For Card
+                    card2.transform.GetChild(0).gameObject.SetActive(true);
+                    card2.color = new Color32(255, 255, 255, 100);
+                    cardsSelected++;
+                    SelectCard(cardno2);
+                    card2_OneClick = true;
+                    return;
                 }
 
-                //For card to select
-                card2.transform.GetChild(0).gameObject.SetActive(true);
-                card2.GetComponent<Button>().interactable = false;
-                cardsSelected++;
-                SelectCard(cardno2);
+                //For Deselect
+                if (card2_OneClick == true)
+                {
+                    //For Icon
+                    groupname = cards[cardno2].group;
+                    if (listGroupNames.Contains(groupname))
+                    {
+                        listGroupNames.Remove(groupname);
+                        if (!listGroupNames.Contains(groupname))
+                        {
+                            listIcons.Remove(groupname);
+                            RemoveIcon();
+                        }
+                    }
+
+                    //For Card
+                    card2.transform.GetChild(0).gameObject.SetActive(false);
+                    card2.color = new Color32(255, 255, 255, 255);
+                    cardsSelected--;
+                    DeSelectCard(cardno2);
+                    card2_OneClick = false;
+                    return;
+                }
             }
             if (val == 3)
             {
-                //For icon to appear
-                groupname = cards[cardno3].group;
-                if (!listIcons.Contains(groupname))
+                //For Select
+                if (card3_OneClick == false)
                 {
-                    listIcons.Add(groupname);
-                    ShowIcon();
+                    //For Icon
+                    groupname = cards[cardno3].group;
+                    listGroupNames.Add(groupname);
+                    if (!listIcons.Contains(groupname))
+                    {
+                        listIcons.Add(groupname);
+                        ShowIcon();
+                    }
+
+                    //For Card
+                    card3.transform.GetChild(0).gameObject.SetActive(true);
+                    card3.color = new Color32(255, 255, 255, 100);
+                    cardsSelected++;
+                    SelectCard(cardno3);
+                    card3_OneClick = true;
+                    return;
                 }
 
-                //For card to select
-                card3.transform.GetChild(0).gameObject.SetActive(true);
-                card3.GetComponent<Button>().interactable = false;
-                cardsSelected++;
-                SelectCard(cardno3);
+                //For Deselect
+                if (card3_OneClick == true)
+                {
+                    //For Icon
+                    groupname = cards[cardno3].group;
+                    if (listGroupNames.Contains(groupname))
+                    {
+                        listGroupNames.Remove(groupname);
+                        if (!listGroupNames.Contains(groupname))
+                        {
+                            listIcons.Remove(groupname);
+                            RemoveIcon();
+                        }
+                    }
+
+                    //For Card
+                    card3.transform.GetChild(0).gameObject.SetActive(false);
+                    card3.color = new Color32(255, 255, 255, 255);
+                    cardsSelected--;
+                    DeSelectCard(cardno3);
+                    card3_OneClick = false;
+                    return;
+                }
             }
             if (val == 4)
             {
-                //For icon to appear
-                groupname = cards[cardno4].group;
-                if (!listIcons.Contains(groupname))
+                //For Select
+                if (card4_OneClick == false)
                 {
-                    listIcons.Add(groupname);
-                    ShowIcon();
+                    //For Icon
+                    groupname = cards[cardno4].group;
+                    listGroupNames.Add(groupname);
+                    if (!listIcons.Contains(groupname))
+                    {
+                        listIcons.Add(groupname);
+                        ShowIcon();
+                    }
+
+                    //For Card
+                    card4.transform.GetChild(0).gameObject.SetActive(true);
+                    card4.color = new Color32(255, 255, 255, 100);
+                    cardsSelected++;
+                    SelectCard(cardno4);
+                    card4_OneClick = true;
+                    return;
                 }
 
-                //For card to select
-                card4.transform.GetChild(0).gameObject.SetActive(true);
-                card4.GetComponent<Button>().interactable = false;
-                cardsSelected++;
-                SelectCard(cardno4);
+                //For Deselect
+                if (card4_OneClick == true)
+                {
+                    //For Icon
+                    groupname = cards[cardno4].group;
+                    if (listGroupNames.Contains(groupname))
+                    {
+                        listGroupNames.Remove(groupname);
+                        if (!listGroupNames.Contains(groupname))
+                        {
+                            listIcons.Remove(groupname);
+                            RemoveIcon();
+                        }
+                    }
+
+                    //For Card
+                    card4.transform.GetChild(0).gameObject.SetActive(false);
+                    card4.color = new Color32(255, 255, 255, 255);
+                    cardsSelected--;
+                    DeSelectCard(cardno4);
+                    card4_OneClick = false;
+                    return;
+                }
             }
             if (val == 5)
             {
-                //For icon to appear
-                groupname = cards[cardno5].group;
-                if (!listIcons.Contains(groupname))
+                //For Select
+                if (card5_OneClick == false)
                 {
-                    listIcons.Add(groupname);
-                    ShowIcon();
+                    //For Icon
+                    groupname = cards[cardno5].group;
+                    listGroupNames.Add(groupname);
+                    if (!listIcons.Contains(groupname))
+                    {
+                        listIcons.Add(groupname);
+                        ShowIcon();
+                    }
+
+                    //For Card
+                    card5.transform.GetChild(0).gameObject.SetActive(true);
+                    card5.color = new Color32(255, 255, 255, 100);
+                    cardsSelected++;
+                    SelectCard(cardno5);
+                    card5_OneClick = true;
+                    return;
                 }
 
-                //For card to select
-                card5.transform.GetChild(0).gameObject.SetActive(true);
-                card5.GetComponent<Button>().interactable = false;
-                cardsSelected++;
-                SelectCard(cardno5);
+                //For Deselect
+                if (card5_OneClick == true)
+                {
+                    //For Icon
+                    groupname = cards[cardno5].group;
+                    if (listGroupNames.Contains(groupname))
+                    {
+                        listGroupNames.Remove(groupname);
+                        if (!listGroupNames.Contains(groupname))
+                        {
+                            listIcons.Remove(groupname);
+                            RemoveIcon();
+                        }
+                    }
+
+                    //For Card
+                    card5.transform.GetChild(0).gameObject.SetActive(false);
+                    card5.color = new Color32(255, 255, 255, 255);
+                    cardsSelected--;
+                    DeSelectCard(cardno5);
+                    card5_OneClick = false;
+                    return;
+                }
             }
         }
     }
@@ -142,6 +300,33 @@ public class SelectionManager : MonoBehaviour
         }
         SoundPlayer._instance.PlaySound("CardSelect");
     }
+
+    //Deselect a card for InGame
+    void DeSelectCard(int val)
+    {
+        if (GameConstant.selectedCard1 != null)
+        {
+            GameConstant.selectedCard1 = null;
+        }
+        else if (GameConstant.selectedCard2 != null)
+        {
+            GameConstant.selectedCard2 = null;
+        }
+        else if (GameConstant.selectedCard3 != null)
+        {
+            GameConstant.selectedCard3 = null;
+        }
+        else if (GameConstant.selectedCard4 != null)
+        {
+            GameConstant.selectedCard4 = null;
+        }
+        else if (GameConstant.selectedCard5 != null)
+        {
+            GameConstant.selectedCard5 = null;
+        }
+        SoundPlayer._instance.PlaySound("cardRemove");
+    }
+
 
     //Calculate & Show Icon Group
     void ShowIcon()
@@ -193,6 +378,31 @@ public class SelectionManager : MonoBehaviour
                 Icon4.sprite = PlantIcon;
             if (groupname == "Dino")
                 Icon4.sprite = DinoIcon;
+        }
+    }
+
+
+    void RemoveIcon()
+    {
+        if (Icon1.gameObject.activeInHierarchy == true)
+        {
+            if (Icon1.sprite.name == groupname)
+                Icon1.gameObject.SetActive(false);
+        }
+        if (Icon2.gameObject.activeInHierarchy == true)
+        {
+            if (Icon2.sprite.name == groupname)
+                Icon2.gameObject.SetActive(false);
+        }
+        if (Icon3.gameObject.activeInHierarchy == true)
+        {
+            if (Icon3.sprite.name == groupname)
+                Icon3.gameObject.SetActive(false);
+        }
+        if (Icon4.gameObject.activeInHierarchy == true)
+        {
+            if (Icon4.sprite.name == groupname)
+                Icon4.gameObject.SetActive(false);
         }
     }
 

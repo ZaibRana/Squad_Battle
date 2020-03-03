@@ -11,5 +11,5 @@ public class GameConstant : MonoBehaviour
     public static string selectedCard4;
     public static string selectedCard5;
 
-
+    public static Vector3 cardPos;
 }

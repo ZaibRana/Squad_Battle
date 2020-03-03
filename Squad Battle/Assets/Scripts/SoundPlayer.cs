@@ -8,6 +8,7 @@ public class SoundPlayer : MonoBehaviour
     public AudioClip button;
     public AudioClip cardSelect;
     public AudioClip cardPlacement;
+    public AudioClip cardRemove;
     public AudioClip death;
     public AudioClip win;
 
@@ -50,5 +51,8 @@ public class SoundPlayer : MonoBehaviour
 
         if (name == "cardPlacement")
             aSource.PlayOneShot(cardPlacement);
+
+        if (name == "cardRemove")
+            aSource.PlayOneShot(cardRemove);
     }
 }
