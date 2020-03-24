@@ -7,79 +7,71 @@ public class PlacementSection : MonoBehaviour
 {
     public Image Sideboard1, Sideboard2, Sideboard3, Sideboard4, Sideboard5, Sideboard6;
 
-    public Card[] cards;
-
-    List<Card> cardsList = new List<Card>();
-
-
     private void Start()
     {
         FetchCards();
         PreviewCards();
     }
 
-    void PreviewCards()
-    {
-        if (cardsList[0] != null)
-        {
-            Sideboard1.gameObject.SetActive(true);
-            Sideboard1.sprite = cardsList[0].artwork;
-        }
-        if (cardsList[1] != null)
-        {
-            Sideboard2.gameObject.SetActive(true);
-            Sideboard2.sprite = cardsList[1].artwork;
-        }
-        if (cardsList[2] != null)
-        {
-            Sideboard3.gameObject.SetActive(true);
-            Sideboard3.sprite = cardsList[2].artwork;
-        }
-        //if (cardsList[3] != null)
-        //{
-        //    Sideboard4.gameObject.SetActive(true);
-        //    Sideboard4.sprite = cardsList[3].artwork;
-        //}
-        //if (cardsList[4] != null)
-        //{
-        //    Sideboard5.gameObject.SetActive(true);
-        //    Sideboard5.sprite = cardsList[4].artwork;
-        //}
-        //if (cardsList[5] != null)
-        //{
-        //    Sideboard6.gameObject.SetActive(true);
-        //    Sideboard6.sprite = cardsList[5].artwork;
-        //}
-    }
 
     void FetchCards()
     {
-        for (int i = 0; i < cards.Length; i++)
+        for (int i = 0; i < AllCards.instance.cards.Length; i++)
         {
-            if (cards[i].cardName == GameConstant.selectedCard1)
+            if (AllCards.instance.cards[i].cardName == GameConstant.selectedCard1)
             {
-                cardsList.Add(cards[i]);
+                GameConstant.battleCardsList.Add(AllCards.instance.cards[i]);
             }
-            if (cards[i].cardName == GameConstant.selectedCard2)
+            if (AllCards.instance.cards[i].cardName == GameConstant.selectedCard2)
             {
-                cardsList.Add(cards[i]);
+                GameConstant.battleCardsList.Add(AllCards.instance.cards[i]);
             }
-            if (cards[i].cardName == GameConstant.selectedCard3)
+            if (AllCards.instance.cards[i].cardName == GameConstant.selectedCard3)
             {
-                cardsList.Add(cards[i]);
+                GameConstant.battleCardsList.Add(AllCards.instance.cards[i]);
             }
-            if (cards[i].cardName == GameConstant.selectedCard4)
+            if (AllCards.instance.cards[i].cardName == GameConstant.selectedCard4)
             {
-                cardsList.Add(cards[i]);
+                GameConstant.battleCardsList.Add(AllCards.instance.cards[i]);
             }
-            if (cards[i].cardName == GameConstant.selectedCard5)
+            if (AllCards.instance.cards[i].cardName == GameConstant.selectedCard5)
             {
-                cardsList.Add(cards[i]);
+                GameConstant.battleCardsList.Add(AllCards.instance.cards[i]);
             }
         }
     }
 
-
-
-
+    void PreviewCards()
+    {
+        if (GameConstant.battleCardsList[0] != null)
+        {
+            Sideboard1.gameObject.SetActive(true);
+            Sideboard1.sprite = GameConstant.battleCardsList[0].artwork;
+        }
+        if (GameConstant.battleCardsList[1] != null)
+        {
+            Sideboard2.gameObject.SetActive(true);
+            Sideboard2.sprite = GameConstant.battleCardsList[1].artwork;
+        }
+        if (GameConstant.battleCardsList[2] != null)
+        {
+            Sideboard3.gameObject.SetActive(true);
+            Sideboard3.sprite = GameConstant.battleCardsList[2].artwork;
+        }
+        //if (GameConstant.battleCardsList[3] != null)
+        //{
+        //    Sideboard4.gameObject.SetActive(true);
+        //    Sideboard4.sprite = GameConstant.battleCardsList[3].artwork;
+        //}
+        //if (GameConstant.battleCardsList[4] != null)
+        //{
+        //    Sideboard5.gameObject.SetActive(true);
+        //    Sideboard5.sprite = GameConstant.battleCardsList[4].artwork;
+        //}
+        //if (GameConstant.battleCardsList[5] != null)
+        //{
+        //    Sideboard6.gameObject.SetActive(true);
+        //    Sideboard6.sprite = GameConstant.battleCardsList[5].artwork;
+        //}
+    }
 }

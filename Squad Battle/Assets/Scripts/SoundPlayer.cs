@@ -11,6 +11,7 @@ public class SoundPlayer : MonoBehaviour
     public AudioClip cardRemove;
     public AudioClip death;
     public AudioClip win;
+    public AudioClip upgrade;
 
     [HideInInspector] public AudioSource aSource;
     public static SoundPlayer _instance;
@@ -54,5 +55,8 @@ public class SoundPlayer : MonoBehaviour
 
         if (name == "cardRemove")
             aSource.PlayOneShot(cardRemove);
+
+        if (name == "upgrade")
+            aSource.PlayOneShot(upgrade);
     }
 }

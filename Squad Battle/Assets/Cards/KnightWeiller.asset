@@ -16,7 +16,8 @@ MonoBehaviour:
   description: 
   artwork: {fileID: 21300000, guid: 15fd196a6efce4a2dbb566558bd5ff10, type: 3}
   group: Animal
-  strength: 8
+  strength: 7
   defence: 4
   cutness: 2
   fear: 0
+  totalvalue: 13

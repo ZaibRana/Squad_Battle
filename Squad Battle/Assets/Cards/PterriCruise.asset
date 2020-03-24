@@ -16,7 +16,8 @@ MonoBehaviour:
   description: 
   artwork: {fileID: 21300000, guid: 1b66085c746174d0ca5083b6537b9f1b, type: 3}
   group: Dino
-  strength: 6
+  strength: 5
   defence: 10
   cutness: 0
   fear: 0
+  totalvalue: 15

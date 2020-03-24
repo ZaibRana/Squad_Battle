@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class ValueShown : MonoBehaviour
 {
-
-    public Card[] cards;
     private bool check;
 
     private void Start()
@@ -16,15 +14,32 @@ public class ValueShown : MonoBehaviour
 
     private void OnMouseOver()
     {
-        for (int i = 0; i < cards.Length; i++)
+        for (int i = 0; i < AllCards.instance.cards.Length; i++)
         {
-            if (cards[i].artwork == this.GetComponent<Image>().sprite && check == true)
+            if (AllCards.instance.cards[i].artwork == this.GetComponent<Image>().sprite && check == true && this.transform.GetChild(3).gameObject.activeInHierarchy == false && AllCards.instance.cards[i].Tier == 1)
             {
+
+                //if find child star is active then choose value of tier2 else this
+
                 this.transform.GetChild(0).gameObject.SetActive(true);
                 this.transform.GetChild(0).transform.GetChild(0).GetComponent<Text>().text =
-                    "Strenght = " + cards[i].strength + "\nDefense = " + cards[i].defence
-                    + "\nCutness = " + cards[i].cutness + "\nFear = " + cards[i].fear;
+                    "Strenght = " + AllCards.instance.cards[i].strength + "\nDefense = " + AllCards.instance.cards[i].defence
+                    + "\nCutness = " + AllCards.instance.cards[i].cutness + "\nFear = " + AllCards.instance.cards[i].fear;
                 check = false;
+
+            }
+
+            if (AllCards.instance.cards[i].artwork == this.GetComponent<Image>().sprite && check == true && this.transform.GetChild(3).gameObject.activeInHierarchy == true && AllCards.instance.cards[i].Tier == 2)
+            {
+
+                //if find child star is active then choose value of tier2 else this
+
+                this.transform.GetChild(0).gameObject.SetActive(true);
+                this.transform.GetChild(0).transform.GetChild(0).GetComponent<Text>().text =
+                    "Strenght = " + AllCards.instance.cards[i].strength + "\nDefense = " + AllCards.instance.cards[i].defence
+                    + "\nCutness = " + AllCards.instance.cards[i].cutness + "\nFear = " + AllCards.instance.cards[i].fear;
+                check = false;
+
             }
         }
     }

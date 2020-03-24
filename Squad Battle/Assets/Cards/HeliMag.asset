@@ -17,6 +17,7 @@ MonoBehaviour:
   artwork: {fileID: 21300000, guid: a98667a386ba2450ab869d8572475b54, type: 3}
   group: Robot
   strength: 10
-  defence: 6
+  defence: 5
   cutness: 0
   fear: 0
+  totalvalue: 15

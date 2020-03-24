@@ -8,14 +8,15 @@ public class Card : ScriptableObject
     public string cardName;
     public string description;
     public Sprite artwork;
+    public int Tier = 1;
 
     public string group;
-    public int strength;    //Attack
-    public int defence;
-    public int cutness;     //
-    public int fear;        //
+    public float strength;    //Attack
+    public float defence;
+    public float cutness;
+    public float fear;
+    public float totalvalue;
 
-    public int totalvalue;
 
     private void OnValidate()
     {

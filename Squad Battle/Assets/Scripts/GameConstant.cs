@@ -12,4 +12,6 @@ public class GameConstant : MonoBehaviour
     public static string selectedCard5;
 
     public static Vector3 cardPos;
+
+    public static List<Card> battleCardsList = new List<Card>();
 }

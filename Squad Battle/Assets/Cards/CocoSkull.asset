@@ -17,6 +17,7 @@ MonoBehaviour:
   artwork: {fileID: 21300000, guid: 0e7f81dde90d64f5e9ef696736518ac9, type: 3}
   group: Plant
   strength: 4
-  defence: 8
+  defence: 7
   cutness: 0
   fear: 2
+  totalvalue: 13
