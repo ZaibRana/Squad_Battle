@@ -10,10 +10,10 @@ public class Card : ScriptableObject
     public Sprite artwork;
 
     public string group;
-    public int strength;
+    public int strength;    //Attack
     public int defence;
-    public int cutness;
-    public int fear;
+    public int cutness;     //
+    public int fear;        //
 
     public int totalvalue;
 
